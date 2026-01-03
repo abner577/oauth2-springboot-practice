@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: resource-server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # The issuer-uri configuration in Spring Boots security OAuth2 resource server settings defines the
+          # URI of the Authorization SErver that issues the JWT tokens.
+          issuer-uri: http://localhost:9000
+
+server:
+  port: 8081

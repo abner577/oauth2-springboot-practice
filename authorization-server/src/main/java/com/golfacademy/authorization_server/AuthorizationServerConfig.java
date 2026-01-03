@@ -44,10 +44,14 @@ public class AuthorizationServerConfig {
 
     @Bean
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http) throws Exception {
-        OAuth2AuthorizationServerConfigurer authorizationServerConfigurer = new OAuth2AuthorizationServerConfigurer();
-        authorizationServerConfigurer.init(http);
-        authorizationServerConfigurer.configure(http);
+        var authorizationServerConfigurer = OAuth2AuthorizationServerConfigurer.authorizationServer();
 
-        return http.formLogin(Customizer.withDefaults()).build();
+        http
+                .securityMatcher(authorizationServerConfigurer.getEndpointsMatcher())
+                .with(authorizationServerConfigurer, (authorizationServer) -> { })
+                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .formLogin(Customizer.withDefaults());
+
+        return http.build();
     }
 }
