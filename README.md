@@ -13,8 +13,8 @@ The project consists of three main components:
 1. **Authorization Server** (Port 9000) - Handles authentication and issues OAuth2 tokens
 2. **Resource Server** (Port 8081) - Provides protected golf lesson endpoints
 3. **Client Applications**:
-    - OAuth2 Client (Spring Security implementation)
-    - No-Auth Client (RestClient without Authorization)
+    - OAuth2 Client (Port 8080) (Spring Security implementation)
+    - No-Auth Client (Port 8082) (RestClient without Authorization)
 
 ## Architecture
 
