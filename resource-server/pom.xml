@@ -7,7 +7,7 @@
 		<artifactId>golf-scheduler</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>resource-server</groupId>
+	<groupId>com.example.resource-server</groupId>
 	<artifactId>resource-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>resource-server</name>
